@@ -1,8 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// GitHub Pages project site: https://<user>.github.io/<repo>/
-export default defineConfig(({ command }) => ({
+// Root base for Vercel / most hosts. (GitHub Pages project URLs need e.g. base: "/repo-name/".)
+export default defineConfig({
   plugins: [react()],
-  base: command === "build" ? "/unirelo/" : "/",
-}));
+});
