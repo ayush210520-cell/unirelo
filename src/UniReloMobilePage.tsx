@@ -1,5 +1,6 @@
-import type { SVGProps } from "react";
 import { useState } from "react";
+import { SiteFooterMarketingMobile } from "./components/layout/SiteFooter";
+import { SiteHeader } from "./components/layout/SiteHeader";
 import {
   img,
   imgArrowBackIos,
@@ -13,10 +14,7 @@ import {
   imgGroup1701,
   imgImage26,
   imgIndia46286981,
-  img21518460293,
-  imgPhone,
   imgRedSemiTruckDrivingHighwaySunset3,
-  imgScreenshot20260303At61838Pm1,
   imgShield,
   imgStar1,
   imgUk46286381,
@@ -31,14 +29,6 @@ import {
  * Full scroll (402×4741 artboard); fluid width below lg breakpoint.
  */
 type ExpertiseTab = "international" | "domestic";
-
-function MenuIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden {...props}>
-      <path d="M4 6h16M4 12h16M4 18h16" stroke="#25376A" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
-}
 
 function ArrowRightSmall({ className }: { className?: string }) {
   return <img alt="" className={className} src={imgArrowRight1} />;
@@ -99,82 +89,74 @@ export default function UniReloMobilePage() {
       data-name="iPhone 17 - 1"
       data-node-id="395:4031"
     >
-      <header className="sticky top-0 z-50 flex w-full items-center justify-between bg-white px-[18px] py-[18px] shadow-[0px_2px_4px_0px_rgba(131,131,131,0.25)]">
-        <div className="relative h-[46px] w-[118px] shrink-0">
-          <div className="absolute inset-[15.22%_0.41%_15.22%_0]">
-            <img alt="UniRelo" className="block size-full max-w-none object-contain" src={imgGroup} />
-          </div>
-        </div>
-        <div className="flex items-center gap-4">
-          <div className="flex h-9 items-center rounded-full border border-[#34519E] pl-2.5 pr-0.5">
-            <span className="pr-1.5 text-[12px] leading-none text-[#34519E]">Call Us Now</span>
-            <div className="flex size-[34px] items-center justify-center rounded-full bg-[#34519E]">
-              <img alt="" className="size-4 object-contain brightness-0 invert" src={imgPhone} />
-            </div>
-          </div>
-          <button type="button" className="-mr-1 p-1 text-[#25376A]" aria-label="Open menu">
-            <MenuIcon />
-          </button>
-        </div>
-      </header>
+      <SiteHeader variant="mobile-marketing" logoSrc={imgGroup} logoFramed />
 
       <div className="flex w-full flex-col">
-        {/* Hero — Frame 395:4059 */}
+        {/* Hero — matches mobile reference screenshot */}
         <div
-          className="w-full bg-[rgba(217,217,217,0.17)] px-[18px] pb-10 pt-7 backdrop-blur-[200px]"
-          style={{ WebkitBackdropFilter: "blur(200px)" }}
+          className="relative w-full overflow-hidden px-5 pb-10 pt-8"
+          style={{
+            background:
+              "radial-gradient(ellipse 120% 80% at 15% -10%, rgba(255, 200, 180, 0.22) 0%, transparent 55%), linear-gradient(180deg, #ffffff 0%, #f4f6fb 45%, #eef1f8 100%)",
+          }}
         >
-          <div className="mx-auto flex w-full max-w-[367px] flex-col items-center gap-10">
-            <div className="flex h-[26px] items-center gap-1 rounded-md bg-[rgba(52,81,158,0.1)] px-2.5 py-2">
+          <div className="relative z-[1] mx-auto flex w-full max-w-[360px] flex-col items-center gap-9">
+            <div className="flex h-[28px] items-center gap-1.5 rounded-md bg-[rgba(52,81,158,0.12)] px-2.5">
               <img alt="" className="size-4 shrink-0" src={imgShield} />
-              <span className="text-center text-[10px] font-bold leading-[2em] tracking-[-0.015em] text-[#34519E]">
+              <span className="text-[10px] font-bold leading-tight tracking-tight text-[#34519E]">
                 20+ Years of Trusted Service
               </span>
             </div>
 
-            <div className="relative w-full px-0 text-center">
-              <h1 className="whitespace-pre-line font-['Inter:Bold',sans-serif] text-[36px] font-bold leading-[1.28] tracking-[-0.023em] text-[#1E1D59]">
-                {`Relocation \nwon't be a challenge,\nwith UniRelo.`}
-              </h1>
-              <div className="mx-auto mt-4 h-[3px] w-full max-w-[348px] rounded-full bg-[#DE5C35]" />
-            </div>
+            <h1 className="w-full text-center font-['Inter:Bold',sans-serif] text-[34px] font-bold leading-[1.22] tracking-[-0.03em] sm:text-[36px]">
+              <span className="block text-[#25376A]">Relocation</span>
+              <span
+                className="mt-1 block px-2 text-[rgba(52,81,158,0.5)] line-through decoration-[#DE5C35] decoration-[3px] [text-decoration-skip-ink:none]"
+                style={{ WebkitTextDecorationSkip: "none" }}
+              >
+                won&apos;t be a challenge,
+              </span>
+              <span className="mt-1 block text-[#25376A]">
+                with <span className="text-[#DE5C35]">UniRelo.</span>
+              </span>
+            </h1>
 
-            {/* Stats: 100+ & 4.8 top row; 25+ full width — Group 395:4069 */}
-            <div className="relative h-[262px] w-full max-w-[338px]">
-              <div className="absolute left-0 top-10 w-[152px] rounded-2xl bg-[rgba(240,80,34,0.2)] px-4 pb-4 pt-7 text-center">
-                <p className="font-['Inter:Bold',sans-serif] text-[18px] font-bold tracking-[-0.046em] text-black">100+</p>
-                <p className="mx-auto mt-2 max-w-[116px] text-left text-[12px] leading-tight text-black">
+            {/* Stats grid: peach | white+tall right; periwinkle full width below */}
+            <div className="relative h-[248px] w-full max-w-[340px]">
+              <div className="absolute left-0 top-8 w-[150px] rounded-2xl bg-[#FDE8E0] px-3 pb-3.5 pt-6 text-center shadow-sm">
+                <p className="font-['Inter:Bold',sans-serif] text-[18px] font-bold text-[#25376A]">100+</p>
+                <p className="mx-auto mt-2 max-w-[118px] text-left text-[11px] font-medium leading-snug text-[#25376A]">
                   Our Esteemed Clients and Partners
                 </p>
               </div>
-              <div className="absolute right-0 top-0 flex w-[166px] flex-col rounded-2xl bg-[rgba(255,255,255,0.43)] px-4 pb-4 pt-4">
-                <div className="mb-3 flex justify-start gap-1 pl-0.5">
-                  <img alt="" className="size-5 rounded-full ring-1 ring-white/60" src={imgEllipse3} />
-                  <img alt="" className="size-5 rounded-full ring-1 ring-white/60" src={imgEllipse4} />
-                  <img alt="" className="size-5 rounded-full ring-1 ring-white/60" src={imgEllipse5} />
-                </div>
+              <div className="absolute right-0 top-0 flex w-[168px] flex-col rounded-2xl border border-[#E8EAED] bg-white px-3.5 pb-3.5 pt-4 shadow-[0px_4px_14px_rgba(0,0,0,0.06)]">
                 <div className="flex items-center gap-2">
-                  <span className="font-['Inter:Bold',sans-serif] text-[24px] font-bold tracking-[-0.024em] text-[#25376A]">
-                    4.8
-                  </span>
-                  <img alt="" className="size-5" src={imgStar1} />
+                  <span className="font-['Inter:Bold',sans-serif] text-[24px] font-bold text-[#25376A]">4.8</span>
+                  <img alt="" className="size-[22px]" src={imgStar1} />
                 </div>
-                <p className="mt-3 max-w-[125px] text-[12px] leading-tight text-[rgba(52,81,158,0.6)]">
+                <div className="mt-3 flex -space-x-2 pl-0.5">
+                  <img alt="" className="relative z-[3] size-[26px] rounded-full ring-2 ring-white" src={imgEllipse3} />
+                  <img alt="" className="relative z-[2] size-[26px] rounded-full ring-2 ring-white" src={imgEllipse4} />
+                  <img alt="" className="relative z-[1] size-[26px] rounded-full ring-2 ring-white" src={imgEllipse5} />
+                </div>
+                <p className="mt-3 text-[11px] font-medium leading-snug text-[#5A6B94]">
                   +120 Successful Stories of our clients
                 </p>
               </div>
-              <div className="absolute bottom-0 left-0 w-full max-w-[337px] rounded-2xl bg-[rgba(52,81,158,0.2)] px-5 pb-3 pt-6 text-center">
-                <p className="font-['Inter:Bold',sans-serif] text-[18px] font-bold tracking-[-0.046em] text-black">25+</p>
-                <p className="mx-auto mt-1 max-w-[161px] text-[12px] leading-tight text-black">Years of Dedicated Services</p>
+              <div className="absolute bottom-0 left-0 w-full rounded-2xl bg-[#E8ECF7] px-4 pb-3.5 pt-5 text-center shadow-sm">
+                <p className="font-['Inter:Bold',sans-serif] text-[18px] font-bold text-[#25376A]">25+</p>
+                <p className="mx-auto mt-1 max-w-[200px] text-[11px] font-medium leading-snug text-[#25376A]">
+                  Years of Dedicated Services
+                </p>
               </div>
             </div>
 
             <button
               type="button"
-              className="flex w-full max-w-[337px] items-center justify-center gap-4 rounded-lg bg-[#DE5C35] px-6 py-3 font-['Inter:Semi_Bold',sans-serif] text-[16px] font-semibold tracking-[-0.02em] text-white"
+              className="flex w-full max-w-[340px] items-center justify-center gap-3 rounded-[10px] bg-[#DE5C35] px-6 py-3.5 font-['Inter:Semi_Bold',sans-serif] text-[16px] font-semibold tracking-[-0.02em] text-white shadow-sm active:brightness-95"
             >
               Get a Quote
-              <img alt="" className="size-5" src={imgArrowRight} />
+              <img alt="" className="size-5 brightness-0 invert" src={imgArrowRight} />
             </button>
           </div>
         </div>
@@ -352,48 +334,34 @@ export default function UniReloMobilePage() {
           </div>
         </section>
 
-        {/* Kickstart — 411:11954 */}
-        <section className="relative w-full px-8 pb-16 pt-16">
-          <div className="relative mx-auto w-full max-w-[338px]">
-            <h2 className="font-['Inter:Bold',sans-serif] text-[26px] font-bold leading-tight tracking-[-0.03em] text-[#25376A] sm:text-[28px]">
-              Kickstart Your Relocation to India With Unirelo
+        {/* Kickstart India + truck hero — matches mobile reference */}
+        <section className="w-full bg-white px-5 pb-14 pt-12">
+          <div className="mx-auto w-full max-w-[400px]">
+            <h2 className="text-left font-['Inter:Bold',sans-serif] text-[26px] font-bold leading-[1.25] tracking-[-0.03em] text-[#25376A] sm:text-[28px]">
+              Kickstart Your Relocation to India With{" "}
+              <span className="text-[#DE5C35]">Unirelo</span>
             </h2>
-            <p className="mt-4 font-['Inter:Medium',sans-serif] text-[14px] font-medium leading-normal text-[rgba(37,55,106,0.8)]">
+            <p className="mt-4 text-left font-['Inter:Medium',sans-serif] text-[14px] font-medium leading-[1.5] text-[rgba(37,55,106,0.72)]">
               There&apos;s no place like home, we assure it stays that way, no matter where you move
             </p>
             <button
               type="button"
-              className="mt-8 inline-flex items-center gap-4 rounded-lg bg-[#DE5C35] px-6 py-3 font-['Inter:Semi_Bold',sans-serif] text-[16px] font-semibold text-white"
+              className="mt-7 inline-flex w-full max-w-[280px] items-center justify-center gap-3 rounded-lg bg-[#DE5C35] px-6 py-3.5 font-['Inter:Semi_Bold',sans-serif] text-[16px] font-semibold text-white shadow-sm sm:max-w-none sm:w-auto sm:px-8"
             >
               Get a Quote
-              <img alt="" className="size-5" src={imgArrowRight} />
+              <img alt="" className="size-5 brightness-0 invert" src={imgArrowRight} />
             </button>
-
-            <div className="relative mt-10 h-[240px] w-full overflow-hidden rounded-lg">
+            <div className="mt-10 w-full overflow-hidden rounded-xl shadow-sm ring-1 ring-black/5">
               <img
-                alt=""
-                className="absolute -left-24 top-0 h-[200px] w-[360px] max-w-none object-cover"
+                alt="Semi truck on highway at sunset"
+                className="h-[min(52vw,240px)] w-full min-h-[200px] object-cover object-center sm:h-[260px]"
                 src={imgRedSemiTruckDrivingHighwaySunset3}
-              />
-            </div>
-            <div className="relative -mt-8 h-[213px] w-full overflow-hidden rounded-lg bg-neutral-200">
-              <img
-                alt=""
-                className="h-full w-full object-cover"
-                src={img21518460293}
               />
             </div>
           </div>
         </section>
 
-        {/* Full-bleed screenshot — 408:2083 */}
-        <div className="relative w-full">
-          <img
-            alt="UniRelo cargo consolidation"
-            className="block h-auto w-full object-cover object-top"
-            src={imgScreenshot20260303At61838Pm1}
-          />
-        </div>
+        <SiteFooterMarketingMobile />
       </div>
     </div>
   );

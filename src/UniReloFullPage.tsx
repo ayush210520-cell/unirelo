@@ -6,6 +6,7 @@ import { useState } from "react";
  * Domestic expertise tab: https://www.figma.com/design/vtwIGM5F7iwx4JmgA3duOh/UniRelo---Website-Revamp?node-id=395-3851
  * Asset URLs expire after ~7 days — export from Figma or host locally for production.
  */
+import { SiteHeader } from "./components/layout/SiteHeader";
 import {
   img,
   imgArrowBackIos,
@@ -50,7 +51,6 @@ import {
   imgPath2187,
   imgPath2188,
   imgPath2201,
-  imgPhone,
   imgRectangle34624350,
   imgRedSemiTruckDrivingHighwaySunset2,
   imgRedSemiTruckDrivingHighwaySunset3,
@@ -67,8 +67,6 @@ import {
   imgVector2,
   imgVector3,
   imgVector4,
-  imgVector5,
-  imgVector6,
   imgVector7,
   imgVector8,
   imgVector9,
@@ -753,90 +751,12 @@ export default function UniReloFullPage() {
           </div>
         </div>
       </div>
-      <div
+      <SiteHeader
+        variant="desktop"
         className="absolute left-[135px] top-[10px] z-30 flex h-[46px] w-[1170px] items-center"
-        data-name="div"
-        data-node-id="395:3748"
-      >
-        <div className="relative h-[46px] w-[118px] shrink-0" data-name="Logo - Dark 2" data-node-id="395:3749">
-          <div className="relative size-full overflow-clip">
-            <div className="absolute inset-[15.22%_0.41%_15.22%_0]" data-name="Group" data-node-id="395:3751">
-              <img alt="UniRelo" className="absolute block size-full max-w-none" src={imgGroup} />
-            </div>
-          </div>
-        </div>
-        <div className="flex min-w-0 flex-1 justify-center px-2" data-node-id="395:3764">
-          <nav
-            className="box-border flex h-[45px] w-[380px] shrink-0 items-center gap-[19px] rounded-[22.5px] border border-[#D5D8DD] bg-white px-3"
-            aria-label="Primary"
-            data-name="nav"
-            data-node-id="395:3766"
-          >
-            <div
-              className="flex h-[30px] items-center justify-center rounded-[15px] bg-[#34519E] px-3.5"
-              data-node-id="395:3767"
-            >
-              <span
-                className="whitespace-nowrap font-['Inter',sans-serif] text-[12px] font-normal leading-none text-white"
-                data-node-id="395:3768"
-              >
-                Home
-              </span>
-            </div>
-            <div className="flex h-[30px] items-center gap-1" data-node-id="395:3769">
-              <span
-                className="font-['Inter',sans-serif] text-[12px] font-normal leading-none text-[#0A0A0A]"
-                data-node-id="395:3771"
-              >
-                Services
-              </span>
-              <div className="relative size-[12px] shrink-0 overflow-hidden" data-node-id="395:3772">
-                <div className="absolute inset-[33.58%_21.92%_34.47%_22.51%]">
-                  <img alt="" className="block size-full max-w-none" src={imgVector5} />
-                </div>
-              </div>
-            </div>
-            <div className="flex h-[30px] items-center gap-1" data-node-id="395:3773">
-              <span
-                className="font-['Inter',sans-serif] text-[12px] font-normal leading-none text-[#0A0A0A]"
-                data-node-id="395:3775"
-              >
-                Moving To
-              </span>
-              <div className="relative size-[12px] shrink-0 overflow-hidden" data-node-id="395:3776">
-                <div className="absolute inset-[33.58%_21.92%_34.47%_22.51%]">
-                  <img alt="" className="block size-full max-w-none" src={imgVector6} />
-                </div>
-              </div>
-            </div>
-            <span
-              className="font-['Inter',sans-serif] text-[12px] font-normal leading-none text-[#0A0A0A]"
-              data-node-id="395:3778"
-            >
-              About Us
-            </span>
-          </nav>
-        </div>
-        <div
-          className="flex h-[45.833px] shrink-0 items-center rounded-[58.667px] border-[0.917px] border-solid border-[#D5D8DD] bg-white pl-[9px] pr-[3px]"
-          data-name="Container"
-          data-node-id="395:3779"
-        >
-          <span
-            className="whitespace-nowrap pl-[7px] pr-1 font-['Inter',sans-serif] text-[12px] font-normal text-black"
-            data-node-id="395:3782"
-          >
-            Call Us Now
-          </span>
-          <div
-            className="flex h-[38.5px] w-[39.417px] shrink-0 items-center justify-center overflow-hidden rounded-[19.25px] bg-[#34519E]"
-            data-name="Phone"
-            data-node-id="395:3783"
-          >
-            <img alt="" className="size-full max-w-none object-contain" src={imgPhone} />
-          </div>
-        </div>
-      </div>
+        logoSrc={imgGroup}
+        logoFramed
+      />
       <div className="-translate-x-1/2 absolute bg-[rgba(52,81,158,0.1)] content-stretch flex gap-[4px] h-[26px] items-center left-1/2 px-[10px] py-[8px] rounded-[6px] top-[130px]" data-name="Container" data-node-id="395:3785">
         <div className="relative shrink-0 size-[16px]" data-name="Shield" data-node-id="395:3786">
           <img alt="" className="absolute block max-w-none size-full" src={imgShield} />
